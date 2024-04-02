@@ -14,7 +14,7 @@ public class DistanceCalculationService : IDistanceCalculationService
                 Math.Sin(dLon / 2) * Math.Sin(dLon / 2)
             ;
         var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
-        var d = R * c; // Distance in km
+        var d = R * c; // Distance in meters
         return d;
     }
 
