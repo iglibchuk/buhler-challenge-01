@@ -10,7 +10,7 @@ internal class MobileFacilityFoodCachedService(MobileFacilityFoodService service
         {
             entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30);
             return (await service.GetAllAsync())
-                .Where(x=>x.Status == ApplicationStatus.APPROVED && x.Latitude != 0 && x.Longitude != 0);
+                .Where(x=>x.Status == ApplicationStatus.Approved && x.Latitude != 0 && x.Longitude != 0);
         }) ?? Enumerable.Empty<MobileFacilityFoodItem>();
     }
 }

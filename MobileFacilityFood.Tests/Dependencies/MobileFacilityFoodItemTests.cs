@@ -26,7 +26,7 @@ public class MobileFacilityFoodItemTests
         Assert.AreEqual("3940", deserializedObject.Block);
         Assert.AreEqual("003", deserializedObject.Lot);
         Assert.AreEqual("23MFF-00016", deserializedObject.Permit);
-        Assert.AreEqual(ApplicationStatus.REQUESTED, deserializedObject.Status);
+        Assert.AreEqual(ApplicationStatus.Requested, deserializedObject.Status);
         CollectionAssert.AreEqual(new []{"bonito poke bowls & various drinks"}, deserializedObject.FoodItems);
         Assert.AreEqual(37.76624504710292, deserializedObject.Latitude);
         Assert.AreEqual(-122.38735628651092, deserializedObject.Longitude);
