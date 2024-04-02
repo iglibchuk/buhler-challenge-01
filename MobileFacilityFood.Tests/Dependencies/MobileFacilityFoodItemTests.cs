@@ -27,7 +27,7 @@ public class MobileFacilityFoodItemTests
         Assert.AreEqual("003", deserializedObject.Lot);
         Assert.AreEqual("23MFF-00016", deserializedObject.Permit);
         Assert.AreEqual(ApplicationStatus.REQUESTED, deserializedObject.Status);
-        CollectionAssert.AreEqual(new []{"Bonito Poke Bowls & Various Drinks"}, deserializedObject.FoodItems);
+        CollectionAssert.AreEqual(new []{"bonito poke bowls & various drinks"}, deserializedObject.FoodItems);
         Assert.AreEqual(37.76624504710292, deserializedObject.Latitude);
         Assert.AreEqual(-122.38735628651092, deserializedObject.Longitude);
         Assert.AreEqual("http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=23MFF-00016&ExportPDF=1&Filename=23MFF-00016_schedule.pdf", deserializedObject.Schedule);
