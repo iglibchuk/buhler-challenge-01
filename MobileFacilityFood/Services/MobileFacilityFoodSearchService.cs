@@ -3,9 +3,8 @@ using MobileFacilityFood.Extensions;
 
 namespace MobileFacilityFood.Services;
 
-internal class MobileFacilityFoodSearchService(IMobileFacilityFoodService facilityFoodService) : IMobileFacilityFoodSearchService
+internal class MobileFacilityFoodSearchService(IMobileFacilityFoodService facilityFoodService, IDistanceCalculationService distanceCalculationService) : IMobileFacilityFoodSearchService
 {
-
     public async Task<IEnumerable<MobileFacilityFoodSearchResultItem>> SearchAsync(double latitude, double longitude, string? preferredFood, int limit)
     {
         if (limit is < 1 or > 1000)
@@ -22,7 +21,7 @@ internal class MobileFacilityFoodSearchService(IMobileFacilityFoodService facili
         }
 
         return allMobileFacilityFood
-            .Select(x => new MobileFacilityFoodSearchResultItem(x, latitude, longitude))
+            .Select(x => new MobileFacilityFoodSearchResultItem(x, distanceCalculationService.Calculate(x.Latitude, x.Longitude, latitude, longitude)))
             .OrderBy(x => x.Distance)
             .Take(limit);
     }

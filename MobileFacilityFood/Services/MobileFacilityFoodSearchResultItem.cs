@@ -4,13 +4,9 @@ namespace MobileFacilityFood.Services;
 
 public class MobileFacilityFoodSearchResultItem(
     MobileFacilityFoodItem mobileFacilityFoodItem,
-    double latitude,
-    double longitude)
+    double distance)
 {
-    public double Distance { get; set; } = Math.Sqrt(
-        (latitude - mobileFacilityFoodItem.Latitude) * (latitude - mobileFacilityFoodItem.Latitude) +
-        (longitude - mobileFacilityFoodItem.Longitude) * (longitude - mobileFacilityFoodItem.Longitude)
-    );
+    public double Distance { get; set; } = distance;
 
     public MobileFacilityFoodItem MobileFacilityFoodItem { get; set; } = mobileFacilityFoodItem;
 }

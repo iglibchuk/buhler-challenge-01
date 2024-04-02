@@ -10,6 +10,7 @@ public static class ServicesExtensions
         services.AddTransient<MobileFacilityFoodService>();
         services.AddTransient<IMobileFacilityFoodService, MobileFacilityFoodCachedService>();
         services.AddTransient<IMobileFacilityFoodSearchService, MobileFacilityFoodSearchService>();
+        services.AddTransient<IDistanceCalculationService, DistanceCalculationService>();
 
         services.AddOptions<MobileFacilityFoodServiceConfiguration>(MobileFacilityFoodServiceConfiguration.Section).Configure<IConfiguration>((options, configuration) =>
         {
