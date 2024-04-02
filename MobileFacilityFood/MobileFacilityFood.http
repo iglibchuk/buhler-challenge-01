@@ -1,0 +1,14 @@
+@MobileFacilityFood_HostAddress = http://localhost:5015
+
+POST {{MobileFacilityFood_HostAddress}}/mobilefacilityfood/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "latitude": 37.74030387280596,
+  "longitude": -122.4060597434942,
+  "limit": 5,
+  "preferredFood": "Tacos"
+}
+
+###
